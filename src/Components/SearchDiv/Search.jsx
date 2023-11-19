@@ -6,6 +6,9 @@ import { CiLocationOn } from "react-icons/ci";
 const Search = () => {
   return (
     <div className="searchDive grid gap-10 bg-[#f1f4f8] rounded-[10px] p-[48px]">
+       <p className=" text-gray-500 text-[56px] font-medium font-['Inter'] leading-[64px] ">
+                Find a job that suits <br></br>your interest & skills.
+              </p>
       <form action="">
         <div
           className="firstDiv flex justify-between items-center rounded-[8px] gap-[10px]
