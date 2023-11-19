@@ -4,7 +4,7 @@ const Navbar = () => {
       <div className="logoDiv flex flex-row">
         <img className="mt-4 w-11 h-11" src="byte-noword.png " />
         <h1 className="logo text-[45px] text-[#2a68ff] pl-[10px] italic">
-          <strong>ByteCareers</strong>
+          <strong>ByteCareer</strong>
         </h1>
       </div>
       <div className="menu flex gap-8">
