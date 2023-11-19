@@ -1,6 +1,6 @@
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
-import { FaTwitter} from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="pr-[24px]">
         <div className="logoDiv">
           <h1 className="logo text-[40px] text-white pl-[10px] italic pb-[24px] pr-24[px]">
-            <strong>INTERHIRE.</strong>
+            <strong>ByteCareer</strong>
           </h1>
         </div>
         <p className="text-white pb-[13px] opacity-70 leading-7">
@@ -44,8 +44,12 @@ const Footer = () => {
           <li className="text-white opacity-[0.7] hover:opacity-[1] ">
             Support Center
           </li>
-          <li className="text-white opacity-[0.7] hover:opacity-[1] ">Feedback</li>
-          <li className="text-white opacity-[0.7] hover:opacity-[1] ">Conract Us</li>
+          <li className="text-white opacity-[0.7] hover:opacity-[1] ">
+            Feedback
+          </li>
+          <li className="text-white opacity-[0.7] hover:opacity-[1] ">
+            Conract Us
+          </li>
         </div>
       </div>
 
@@ -57,32 +61,28 @@ const Footer = () => {
           <li className="text-white opacity-[0.7] hover:opacity-[1] ">
             Events
           </li>
+          <li className="text-white opacity-[0.7] hover:opacity-[1] ">Promo</li>
           <li className="text-white opacity-[0.7] hover:opacity-[1] ">
-            Promo
+            Req Demo
           </li>
-          <li className="text-white opacity-[0.7] hover:opacity-[1] ">Req Demo</li>
-          <li className="text-white opacity-[0.7] hover:opacity-[1] ">Careers</li>
+          <li className="text-white opacity-[0.7] hover:opacity-[1] ">
+            Careers
+          </li>
         </div>
       </div>
       <div className="grid">
         <span className="divTitele text-[18px] font-semibold pb-[24px] text-white">
           Contact Info
         </span>
-        <div > 
-          <small className="text-[14px] text-white">
-          Waiting4u@outside.com
-          </small>
+        <div>
+          <small className="text-[14px] text-white">bytecareer@gmail.com</small>
           <div className="icons flex gap-4 py-[16px]">
-          <AiFillInstagram className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff]" />
-          <BsFacebook className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff]" />
-          <FaTwitter className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff] "/>
-
-
-
+            <AiFillInstagram className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff]" />
+            <BsFacebook className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff]" />
+            <FaTwitter className="bg-white p-[8px] h-[35px] w-[35px] rounded-full icon text-[#2a68ff] " />
           </div>
         </div>
       </div>
-
     </div>
   );
 };
