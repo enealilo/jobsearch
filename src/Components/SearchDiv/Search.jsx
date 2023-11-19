@@ -7,10 +7,7 @@ const Search = () => {
   return (
     <div className="searchDive grid gap-10 bg-[#f1f4f8] rounded-[10px] p-[48px]">
       <form action="">
-        <div
-          className="firstDiv flex justify-between items-center rounded-[8px] gap-[10px]
-         bg-white p-5 shadow-lg shadow-[#f1f4f8 700]"
-        >
+        <div className="firstDiv flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 shadow-lg shadow-[#f1f4f8 700]">
           <div className="flex gap-2 items-center">
             <AiOutlineSearch className="text-[25px] icon" />
             <input
@@ -45,14 +42,17 @@ const Search = () => {
         </div>
       </form>
 
-
       <div className="secDiv flex items-center gap-10 justify-center">
         <div className="singleSearch flex items-center gap-2">
           <label htmlFor="relevance" className="text-[#808080] font-semibold">
             Sort by:
           </label>
 
-          <select name="" id="relevance" className="bg-white rounded-[3px] px-4 py-1">
+          <select
+            name=""
+            id="relevance"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
             <option value="">Relevance</option>
             <option value="">Inclusive</option>
             <option value="">Starts With</option>
@@ -65,7 +65,11 @@ const Search = () => {
             Type:
           </label>
 
-          <select name="" id="type" className="bg-white rounded-[3px] px-4 py-1">
+          <select
+            name=""
+            id="type"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
             <option value="">Full- Time</option>
             <option value="">Remote</option>
             <option value="">Contract</option>
@@ -78,14 +82,18 @@ const Search = () => {
             Level:
           </label>
 
-          <select name="" id="level" className="bg-white rounded-[3px] px-4 py-1">
+          <select
+            name=""
+            id="level"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
             <option value="">Senior</option>
             <option value="">Advance</option>
             <option value="">Intermediate</option>
             <option value="">Begginer</option>
           </select>
         </div>
-        <span className="text-[#a1a1a1] cursor-pointer">Claear All</span>
+        <span className="text-[#a1a1a1] cursor-pointer">Clear All</span>
       </div>
     </div>
   );
