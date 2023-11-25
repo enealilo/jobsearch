@@ -1,0 +1,3 @@
+[submodule "job-finder-backend"]
+	path = job-finder-backend
+	url = https://github.com/eniogit/job-finder-backend.git
