@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/FooterDiv/Footer";
 import Jobs from "./Components/JobsDiv/Jobs";
@@ -9,9 +10,7 @@ function App() {
   return (
       <div className="w-[85%] m-auto bg-white ">
         <Navbar></Navbar>
-        <Search></Search>
-        <Jobs></Jobs>
-        <Values></Values>
+        <Outlet/>
         <Footer></Footer>
       </div>
   );
