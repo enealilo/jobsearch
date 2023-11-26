@@ -37,7 +37,7 @@ const Search = () => {
               console.log(search);
               //Make request to search
               const response = await fetch(
-                `http://localhost:8000/api/jobs?query=${search}`,
+                `http://192.168.2.121:/api/jobs?query=${search}`,
                 {
                   method: "GET",
                 }

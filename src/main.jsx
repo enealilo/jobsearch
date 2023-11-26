@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
         path: '/',
         element: <Home/>,
         loader: async () => {
-          const response = await fetch(`http://localhost:8000/api/jobs`, {
+          const response = await fetch(`http://192.168.2.121:8000/api/jobs`, {
                 method: 'GET',
               });
               const jobs = await response.json();

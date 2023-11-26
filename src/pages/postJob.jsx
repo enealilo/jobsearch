@@ -1,4 +1,35 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+library.add(fas, faTwitter, faFontAwesome)
+
+
 export default function PostJob() {
+
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const uploadImage = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    console.log(base64);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -9,45 +40,50 @@ export default function PostJob() {
           Get your job posting seen by thousands of technology passionants!
         </p>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center pb-20">
         <div className="  bg-[#f1f4f8] rounded-[10px] shadow-lg p-10 mt-12 w-[654px] ">
           <h3 className="font-medium text-gray-600">COMPANY DETAILS</h3>
           <div className="flex flex-row  gap-x-16">
-            <div className=" border border-gray-600 rounded w-[267px] h-[146px] mt-5 ">
-              <p className="flex justify-center pt-28"> Upload Image</p>
+            <div className="rounded w-[250px] h-[146px] mt-7 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 ">
+              <input type="file" className="flex justify-center pt-28" onChange={(e) => {
+                uploadImage(e)
+              }}/>
+              <FontAwesomeIcon icon="fa-solid fa-upload" />
             </div>
-            <div className=" flex flex-col pt-4">
-              <label className="font-medium text-gray-600 pt-5 ">
+            <div className=" flex flex-col  w-1/2">
+              <label className="font-medium text-gray-600 pt-5">
                 Company Name
               </label>
-              <input className=" focus:outline-none mt-2" type="text"></input>
+              <input
+                className=" focus:outline-none mt-2 rounded p-1 rounded box-border border-2"
+                type="text"
+              ></input>
               <label className="font-medium text-gray-600 pt-5 ">
-                Company Website
+                Job Title
               </label>
-              <input className=" focus:outline-none mt-2" type="text"></input>
+              <input
+                className=" focus:outline-none mt-2 rounded p-1 rounded box-border border-2"
+                type="text"
+              ></input>
             </div>
           </div>
           <div>
             <h3 className="font-medium text-gray-600 pb-5 pt-12">
               JOB DETAILS
             </h3>
-            <div className="flex flex-row justify-center gap-20">
+            <div className="flex flex-row gap-4">
               <div className="singleSearch flex items-center gap-2">
-                <label
-                  htmlFor="relevance"
-                  className="text-[#808080] font-semibold"
-                >
-                  Sort by:
-                </label>
-
-                <select
-                  name=""
-                  id="relevance"
-                  className="bg-white rounded-[3px] px-4 py-1"
-                >
-                  <option value="">Salary</option>
-                  <option value="">Time</option>
-                </select>
+                <label className="text-[#808080] font-semibold">Salary</label>
+                <input
+                  className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
+                  type="text"
+                  placeholder="Min range"
+                ></input>
+                <input
+                  className=" focus:outline-none  rounded  box-border h-8 w-28 p-4 border-2 "
+                  type="text"
+                  placeholder="Max range"
+                ></input>
               </div>
               <div className="singleSearch flex items-center gap-2">
                 <label htmlFor="level" className="text-[#808080] font-semibold">
@@ -57,17 +93,34 @@ export default function PostJob() {
                 <select
                   name=""
                   id="level"
-                  className="bg-white rounded-[3px] px-4 py-1"
+                  className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
                 >
                   <option value="">Senior</option>
                   <option value="">Intermediate</option>
-                  <option value="">Begginer</option>
+                  <option value="">Beginner</option>
                 </select>
               </div>
             </div>
-            <div className="flex flex-col pb-5 pt-5">
-                <label className="font-medium text-gray-600 pt-5">Job Description</label>
-                <textarea className="mt-5" placeholder=""></textarea>
+            <div className="pb-5 pt-5">
+              <label
+                for="message"
+                class="font-medium text-gray-600 pt-5 block mb-2 text-sm font-medium"
+              >
+                JOB DESCRIPTION
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                class="block p-2.5 focus:outline-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Describe your job here..."
+              ></textarea>
+            </div>
+
+            <div className="flex justify-end">
+              {" "}
+              <button className="bg-[#2a68ff] h-full p-3 px-6 rounded-[10px] text-white cursor-pointer hover:bg-blue-300">
+                Submit
+              </button>
             </div>
           </div>
         </div>
