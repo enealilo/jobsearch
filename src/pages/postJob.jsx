@@ -48,8 +48,9 @@ export default function PostJob() {
               <input type="file" className="flex justify-center pt-28" onChange={(e) => {
                 uploadImage(e)
               }}/>
-              <FontAwesomeIcon icon="fa-solid fa-upload" />
+            <FontAwesomeIcon icon="fa-solid fa-upload" />
             </div>
+
             <div className=" flex flex-col  w-1/2">
               <label className="font-medium text-gray-600 pt-5">
                 Company Name
