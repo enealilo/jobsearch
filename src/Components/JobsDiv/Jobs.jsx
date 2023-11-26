@@ -1,6 +1,4 @@
 // Imported the incons
-import { BiTime } from "react-icons/bi";
-
 // Import teh logos
 import logo1 from "../../assets/logo1.png";
 import logo2 from "../../assets/logo2.webp";

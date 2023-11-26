@@ -15,10 +15,10 @@ const Navbar = () => {
           Find Job
         </li>
         <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff] ">
-          About
+          Post Job
         </li>
         <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff]">
-          Contact
+        About Us
         </li>
       </div>
     </div>

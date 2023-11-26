@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/FooterDiv/Footer";
-import Jobs from "./Components/JobsDiv/Jobs";
 import Navbar from "./Components/NavDiv/Navbar";
-import Search from "./Components/SearchDiv/Search";
-import Values from "./Components/Values/Values";
+import PostJob from "./pages/postJob"; 
+
 
 function App() {
   return (
@@ -12,6 +11,7 @@ function App() {
         <Navbar></Navbar>
         <Outlet/>
         <Footer></Footer>
+        <PostJob></PostJob>
       </div>
   );
 }

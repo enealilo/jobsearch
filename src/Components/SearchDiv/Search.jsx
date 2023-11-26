@@ -1,7 +1,4 @@
 import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import { BsHouseDoor } from "react-icons/bs";
-import { CiLocationOn } from "react-icons/ci";
 import { useState } from "react";
 
 const Search = () => {
@@ -13,11 +10,15 @@ const Search = () => {
 
   return (
     <div className="searchDive grid gap-10 bg-[#f1f4f8] rounded-[10px] p-[48px] ">
-      <p className=" text-gray-500 text-[56px] font-medium font-['Inter'] leading-[64px] ">
-        Find a job that suits <br></br>your interest & skills.
-      </p>
-      <form action="">
-        <div className="firstDiv flex justify-between items-center rounded-[8px] gap-[10px] bg-white p-5 shadow-lg shadow-[#f1f4f8 700]">
+      <div className="flex pl-10">
+        <p className=" font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-gray-600 text-[56px] font-['Inter'] leading-[64px] mt-28">
+          Find a job that suits <br></br>your interest & skills.
+        </p>
+        <img className="w-96 h-45 ml-16 " src="src\assets\globee.png"></img>
+      </div>
+
+      <form className="pt-0" action="">
+        <div className="firstDiv flex justify-between items-center rounded-[8px] bg-white p-5  shadow-lg shadow-[#f1f4f8 700]">
           <div className="flex gap-2 items-center">
             <AiOutlineSearch className="text-[25px] icon" />
             <input
@@ -27,39 +28,24 @@ const Search = () => {
               className="bg-transparent text-blue-500 focus:outline-none w-[100%]"
               placeholder="Search Job Here...."
             />
-            <AiOutlineCloseCircle className="text-[30px] text-[#a5a6a6] hover:text-[#252b36] icon" />
           </div>
-          <div className="flex gap-2 items-center">
-            <BsHouseDoor className="text-[25px] icon" />
-            <input
-              type="text"
-              className="bg-transparent text-blue-500 focus:outline-none w-[100%]"
-              placeholder="Search By Company...."
-            />
-            <AiOutlineCloseCircle className="text-[30px] text-[#a5a6a6] hover:text-[#252b36] icon" />
-          </div>
-          <div className="flex gap-2 items-center">
-            <CiLocationOn className="text-[25px] icon" />
-            <input
-              type="text"
-              className="bg-transparent text-blue-500 focus:outline-none w-[100%]"
-              placeholder="Search By Location ...."
-            />
-            <AiOutlineCloseCircle className="text-[30px] text-[#a5a6a6] hover:text-[#252b36] icon" />
-          </div>
+          <div className="flex gap-2 items-center"></div>
 
           <button
             onClick={async (event) => {
               event.preventDefault();
               console.log(search);
               //Make request to search
-              const response = await fetch(`http://localhost:8000/api/jobs?query=${search}`, {
-                method: 'GET',
-              });
+              const response = await fetch(
+                `http://localhost:8000/api/jobs?query=${search}`,
+                {
+                  method: "GET",
+                }
+              );
               const jobs = await response.json();
               console.log(jobs);
             }}
-            className="bg-[#2a68ff] h-full p-5 px-10 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
+            className="bg-[#2a68ff] h-full p-4 px-10 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
           >
             Search
           </button>
@@ -77,27 +63,8 @@ const Search = () => {
             id="relevance"
             className="bg-white rounded-[3px] px-4 py-1"
           >
-            <option value="">Relevance</option>
-            <option value="">Inclusive</option>
-            <option value="">Starts With</option>
-            <option value="">Containes</option>
-          </select>
-        </div>
-
-        <div className="singleSearch flex items-center gap-2">
-          <label htmlFor="type" className="text-[#808080] font-semibold">
-            Type:
-          </label>
-
-          <select
-            name=""
-            id="type"
-            className="bg-white rounded-[3px] px-4 py-1"
-          >
-            <option value="">Full- Time</option>
-            <option value="">Remote</option>
-            <option value="">Contract</option>
-            <option value="">Part- Time</option>
+            <option value="">Salary</option>
+            <option value="">Time</option>
           </select>
         </div>
 
@@ -112,7 +79,6 @@ const Search = () => {
             className="bg-white rounded-[3px] px-4 py-1"
           >
             <option value="">Senior</option>
-            <option value="">Advance</option>
             <option value="">Intermediate</option>
             <option value="">Begginer</option>
           </select>
