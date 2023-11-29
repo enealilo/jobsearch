@@ -1,13 +1,17 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-library.add(fas, faTwitter, faFontAwesome)
-
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+library.add(fas, faTwitter, faFontAwesome);
+import { useState } from "react";
 
 export default function PostJob() {
-
+  const [company, setCompany] = useState("");
+  const [job, setJob] = useState("");
+  const [minSalary, setMinSalary] = useState("");
+  const [maxSalary, setMaxSalary] = useState("");
+  const [level, setLevel] = useState("");
+  const [description, setDescription] = useState("");
 
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -30,6 +34,18 @@ export default function PostJob() {
     console.log(base64);
   };
 
+  const submitJob = (e) => {
+    e.preventDefault();
+    console.log({
+      company,
+      job,
+      minSalary,
+      maxSalary,
+      level,
+      description,
+    });
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -45,10 +61,14 @@ export default function PostJob() {
           <h3 className="font-medium text-gray-600">COMPANY DETAILS</h3>
           <div className="flex flex-row  gap-x-16">
             <div className="rounded w-[250px] h-[146px] mt-7 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 ">
-              <input type="file" className="flex justify-center pt-28" onChange={(e) => {
-                uploadImage(e)
-              }}/>
-            <FontAwesomeIcon icon="fa-solid fa-upload" />
+              <input
+                type="file"
+                className="flex justify-center pt-28"
+                onChange={(e) => {
+                  uploadImage(e);
+                }}
+              />
+              <FontAwesomeIcon icon="fa-solid fa-upload" />
             </div>
 
             <div className=" flex flex-col  w-1/2">
@@ -56,6 +76,8 @@ export default function PostJob() {
                 Company Name
               </label>
               <input
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
                 className=" focus:outline-none mt-2 rounded p-1 rounded box-border border-2"
                 type="text"
               ></input>
@@ -63,6 +85,8 @@ export default function PostJob() {
                 Job Title
               </label>
               <input
+                value={job}
+                onChange={(e) => setJob(e.target.value)}
                 className=" focus:outline-none mt-2 rounded p-1 rounded box-border border-2"
                 type="text"
               ></input>
@@ -76,13 +100,17 @@ export default function PostJob() {
               <div className="singleSearch flex items-center gap-2">
                 <label className="text-[#808080] font-semibold">Salary</label>
                 <input
+                  value={minSalary}
+                  onChange={(e) => setMinSalary(e.target.value)}
                   className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
-                  type="text"
+                  type="number"
                   placeholder="Min range"
                 ></input>
                 <input
+                  value={maxSalary}
+                  onChange={(e) => setMaxSalary(e.target.value)}
                   className=" focus:outline-none  rounded  box-border h-8 w-28 p-4 border-2 "
-                  type="text"
+                  type="number"
                   placeholder="Max range"
                 ></input>
               </div>
@@ -90,16 +118,17 @@ export default function PostJob() {
                 <label htmlFor="level" className="text-[#808080] font-semibold">
                   Level:
                 </label>
-
                 <select
-                  name=""
-                  id="level"
-                  className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
-                >
-                  <option value="">Senior</option>
-                  <option value="">Intermediate</option>
-                  <option value="">Beginner</option>
-                </select>
+  value={level}
+  onChange={(e) => setLevel(e.target.value)}
+  name=""
+  id="level"
+  className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
+>
+  <option value="Senior">Senior</option>
+  <option value="Intermediate">Intermediate</option>
+  <option value="Beginner">Beginner</option>
+</select>
               </div>
             </div>
             <div className="pb-5 pt-5">
@@ -110,6 +139,8 @@ export default function PostJob() {
                 JOB DESCRIPTION
               </label>
               <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 id="message"
                 rows="4"
                 class="block p-2.5 focus:outline-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -118,8 +149,10 @@ export default function PostJob() {
             </div>
 
             <div className="flex justify-end">
-              {" "}
-              <button className="bg-[#2a68ff] h-full p-3 px-6 rounded-[10px] text-white cursor-pointer hover:bg-blue-300">
+              <button
+                onClick={submitJob}
+                className="bg-[#2a68ff] h-full p-3 px-6 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
+              >
                 Submit
               </button>
             </div>
