@@ -12,6 +12,7 @@ export default function PostJob() {
   const [maxSalary, setMaxSalary] = useState("");
   const [level, setLevel] = useState("");
   const [description, setDescription] = useState("");
+  const [logo, setLogo] = useState("");
 
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -32,6 +33,7 @@ export default function PostJob() {
     const file = event.target.files[0];
     const base64 = await convertBase64(file);
     console.log(base64);
+    setLogo(base64);
   };
 
   const submitJob = (e) => {
@@ -44,6 +46,40 @@ export default function PostJob() {
       level,
       description,
     });
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      title: job,
+      expLevel: level,
+      description: description,
+      contactInfo: {
+        // cell: "+355696969696",
+        // email: "eniovrushi.ev@gmail.com",
+        // address: "Rruga",
+      },
+      company: {
+        name: company,
+        logo,
+      },
+      salary: {
+        min: minSalary,
+        max: maxSalary,
+      },
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:8000/api/jobs", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   };
 
   return (
@@ -119,16 +155,16 @@ export default function PostJob() {
                   Level:
                 </label>
                 <select
-  value={level}
-  onChange={(e) => setLevel(e.target.value)}
-  name=""
-  id="level"
-  className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
->
-  <option value="Senior">Senior</option>
-  <option value="Intermediate">Intermediate</option>
-  <option value="Beginner">Beginner</option>
-</select>
+                  value={level}
+                  onChange={(e) => setLevel(e.target.value)}
+                  name=""
+                  id="level"
+                  className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
+                >
+                  <option value="Senior">Senior</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Beginner">Beginner</option>
+                </select>
               </div>
             </div>
             <div className="pb-5 pt-5">

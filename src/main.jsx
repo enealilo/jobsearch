@@ -4,6 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
+import PostJob from './pages/postJob.jsx'
+import AboutUs from './pages/aboutUs.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -19,6 +21,20 @@ const routes = createBrowserRouter([
               });
               const jobs = await response.json();
               return jobs;
+        }
+      },
+      {
+        path: '/postjob',
+        element: <PostJob/>,
+        loader: async () => {
+          return null;
+        }
+      },
+      {
+        path: '/aboutus',
+        element: <AboutUs/>,
+        loader: async () => {
+          return null;
         }
       }
     ]

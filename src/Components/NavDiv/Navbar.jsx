@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navBar flex justify-between items-center p-[48pm]">
@@ -9,16 +10,13 @@ const Navbar = () => {
       </div>
       <div className="menu flex gap-8">
         <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff] ">
-          Home
+          <Link to="/">Home</Link>
         </li>
         <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff] ">
-          Find Job
-        </li>
-        <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff] ">
-          Post Job
+       <Link to="/postjob">  Post Job </Link>  
         </li>
         <li className="menuList text-gray-600 font-bold hover:text-[#2a68ff]">
-        About Us
+       <Link to="/aboutus"> About Us</Link> 
         </li>
       </div>
     </div>

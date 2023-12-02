@@ -116,11 +116,9 @@ const Jobs = () => {
                   {title}
                 </h1>
                 <span className="flex items-center text-[#ccc] gap-1">
-                  {/* <BiTime />
-                  {time} */}
+                  
                 </span>
               </span>
-              {/* <h6 className="text-[#ccc]">{location}</h6> */}
 
               <p className="text-[13px] text-[#959595] border-t-[2px] mt-[20px] group-hover:text-white">
                 {description}
@@ -133,7 +131,7 @@ const Jobs = () => {
                 </span>
               </div>
               <button className="border-[2px] rounded-[10px] block p-[10px] w-full text-[14px] font-semibold text-[#252b36] hover:bg-white  group-hover:text-[#252b36]">
-                Apply Now
+                Read more
               </button>
             </div>
           );
