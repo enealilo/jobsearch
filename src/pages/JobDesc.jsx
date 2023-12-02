@@ -55,7 +55,7 @@ export default function JobDesc() {
               </div>
             </div>
             <div className="pb-16">
-              <div className="w-96 h-40 p-8 bg-white rounded-lg border-2 border-sky-100 shadow-lg justify-center items-center gap-8 inline-flex">
+              <div className="w-[400px] h-40 p-8 bg-white rounded-lg border-2 border-sky-100 shadow-lg justify-center items-center gap-8 inline-flex">
                 <div className="grow shrink basis-0 flex-col justify-center items-center gap-3 inline-flex">
                   <div className="self-stretch text-center text-zinc-900 text-base font-medium font-['Inter'] leading-normal">
                     Salary (USD)
@@ -71,7 +71,7 @@ export default function JobDesc() {
                 </div>
               </div>
             </div>
-            <div className="w-96 h-56  bg-white rounded-lg border-2 border-sky-100 shadow-lg flex-col justify-start inline-flex">
+            <div className="w-[400px] h-56 bg-white rounded-lg border-2 border-sky-100 shadow-lg flex-col justify-start inline-flex p-1">
               <div className=" text-zinc-900 text-lg font-medium font-['Inter'] leading-7 ml-6 pt-6 pb-6">
                 Job Overview
               </div>
@@ -83,7 +83,7 @@ export default function JobDesc() {
                       className="w-8 h-8 relative"
                     />
                   </div>
-                  <div className="self-stretch  flex-col justify-start items-start gap-1 flex">
+                  <div className="self-stretch flex-col justify-start items-start gap-1 flex">
                     <div className="self-stretch text-gray-500 text-xs font-normal font-['Inter'] uppercase leading-[18px]">
                       Job Posted:
                     </div>
@@ -106,7 +106,8 @@ export default function JobDesc() {
                       Job Level:
                     </div>
                     <div className="self-stretch text-zinc-900 text-sm font-medium font-['Inter'] leading-tight">
-                      Junior
+                      
+                      {job.expLevel}
                     </div>
                   </div>
                 </div>
