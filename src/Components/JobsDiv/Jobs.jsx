@@ -1,109 +1,14 @@
-// Imported the incons
-// Import teh logos
-import logo1 from "../../assets/logo1.png";
-import logo2 from "../../assets/logo2.webp";
-import logo3 from "../../assets/logo3.png";
-import logo4 from "../../assets/logo4.png";
 import { useLoaderData } from "react-router-dom";
 
-const Data = [
-  {
-    id: 1,
-    image: logo1,
-    title: "Web Developer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 2,
-    image: logo2,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 3,
-    image: logo3,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 4,
-    image: logo2,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 5,
-    image: logo3,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 6,
-    image: logo4,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 7,
-    image: logo2,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 8,
-    image: logo2,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 9,
-    image: logo3,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-  {
-    id: 10,
-    image: logo3,
-    title: "Softwere Engeneer",
-    time: "Now",
-    location: "Albania",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vitae neque ad velit laudantium quidem eos autem accusamus ullam voluptatem. Itaque id natus doloremque eos officiis iste! Pariatur, provident sit",
-    company: "Novac Linus Co.",
-  },
-];
-
 const Jobs = () => {
-  const jobs = useLoaderData();
+  const {jobs} = useLoaderData();
   console.log(jobs);
   return (
     <div>
+      <label>Result:</label>
+      {/* {jobs.length}; */}
+      
+
       <div className="jobContainer flex gap-10 justify-center flex-wrap items-center py-10">
         {jobs.map(({ _id, image, title, time, location, description, company }) => {
           return (

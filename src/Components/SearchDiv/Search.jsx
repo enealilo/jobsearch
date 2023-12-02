@@ -1,8 +1,12 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
+import { Form } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
+  const {query} = useLoaderData();
+  const [search, setSearch] = useState(query);
+  
 
   const changeHandler = (e) => {
     setSearch(e.target.value);
@@ -17,7 +21,7 @@ const Search = () => {
         <img className="w-96 h-45 ml-16 " src="src\assets\globee.png"></img>
       </div>
 
-      <form className="pt-0" action="">
+      <Form className="pt-0" action="/">
         <div className="firstDiv flex justify-between items-center rounded-[8px] bg-white p-5  shadow-lg shadow-[#f1f4f8 700]">
           <div className="flex gap-2 items-center">
             <AiOutlineSearch className="text-[25px] icon" />
@@ -27,30 +31,32 @@ const Search = () => {
               type="text"
               className="bg-transparent text-blue-500 focus:outline-none w-[100%]"
               placeholder="Search Job Here...."
+              name="query"
             />
           </div>
           <div className="flex gap-2 items-center"></div>
 
-          <button
-            onClick={async (event) => {
-              event.preventDefault();
-              console.log(search);
-              //Make request to search
-              const response = await fetch(
-                `http://localhost:/api/jobs?query=${search}`,
-                {
-                  method: "GET",
-                }
-              );
-              const jobs = await response.json();
-              console.log(jobs);
-            }}
+          <button 
+          type="submit"
+            // onClick={async (event) => {
+            //   event.preventDefault();
+            //   console.log(search);
+            //   //Make request to search
+            //   const response = await fetch(
+            //     `http://localhost:8000/api/jobs?query=${search}`,
+            //     {
+            //       method: "GET",
+            //     }
+            //   );
+            //   const jobs = await response.json();
+            //   console.log(jobs);
+            // }}
             className="bg-[#2a68ff] h-full p-4 px-10 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
           >
             Search
           </button>
         </div>
-      </form>
+      </Form>
 
       <div className="secDiv flex items-center gap-10 justify-center">
         <div className="singleSearch flex items-center gap-2">

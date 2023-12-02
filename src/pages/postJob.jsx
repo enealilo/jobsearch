@@ -10,9 +10,13 @@ export default function PostJob() {
   const [job, setJob] = useState("");
   const [minSalary, setMinSalary] = useState("");
   const [maxSalary, setMaxSalary] = useState("");
-  const [level, setLevel] = useState("");
+  const [level, setLevel] = useState("senior");
   const [description, setDescription] = useState("");
-  const [logo, setLogo] = useState("");
+  const [logo, setLogo] = useState(undefined);
+  const [email, setEmail] = useState ("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  
 
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -45,6 +49,9 @@ export default function PostJob() {
       maxSalary,
       level,
       description,
+      email,
+      phone,
+      address,
     });
 
     const myHeaders = new Headers();
@@ -55,9 +62,9 @@ export default function PostJob() {
       expLevel: level,
       description: description,
       contactInfo: {
-        // cell: "+355696969696",
-        // email: "eniovrushi.ev@gmail.com",
-        // address: "Rruga",
+        cell: phone,
+        email,
+        address,
       },
       company: {
         name: company,
@@ -77,9 +84,13 @@ export default function PostJob() {
     };
 
     fetch("http://localhost:8000/api/jobs", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result)
+        window.location.href = `/job/${result._id}`;
+      })
       .catch((error) => console.log("error", error));
+
   };
 
   return (
@@ -129,7 +140,7 @@ export default function PostJob() {
             </div>
           </div>
           <div>
-            <h3 className="font-medium text-gray-600 pb-5 pt-12">
+          <h3 className="font-medium text-gray-600 pb-5 pt-12">
               JOB DETAILS
             </h3>
             <div className="flex flex-row gap-4">
@@ -161,11 +172,43 @@ export default function PostJob() {
                   id="level"
                   className="bg-white rounded-[3px] px-4 py-1 rounded box-border border-2"
                 >
-                  <option value="Senior">Senior</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Beginner">Beginner</option>
+                  <option value="senior">Senior</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="junior">Junior</option>
                 </select>
               </div>
+            </div>
+            </div>
+            <div>
+          <h3 className="font-medium text-gray-600 pb-5 pt-12">
+              CONTACT INFORMATION
+            </h3>
+            <div className="flex flex-row gap-4">
+              <div className="singleSearch flex items-center gap-2">
+                <label className="text-[#808080] font-semibold">Cellular</label>
+                <input
+                 value={phone}
+                 onChange={(e) => setPhone(e.target.value)}
+                  placeholder="(+355)"
+                  className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
+                ></input>
+                  <label className="text-[#808080] font-semibold">Email</label>
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
+                ></input>
+                  <label className="text-[#808080] font-semibold">Address</label>
+                <input
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
+                ></input>
+            </div>
+            </div>
+          
+
+          
             </div>
             <div className="pb-5 pt-5">
               <label
@@ -183,6 +226,7 @@ export default function PostJob() {
                 placeholder="Describe your job here..."
               ></textarea>
             </div>
+            
 
             <div className="flex justify-end">
               <button
@@ -194,7 +238,7 @@ export default function PostJob() {
             </div>
           </div>
         </div>
-      </div>
+     
     </>
   );
 }
