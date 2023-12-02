@@ -3,11 +3,11 @@ export default function JobDesc() {
       <>
         <div className="w-full h-full bg-white">
         <div className="flex flex-row">
-          <div className="flex flex-col pt-10 ml-60">
+          <div className="flex flex-col pt-10 ml-40">
             <div className="flex flex-row">
               <img
                 className="w-14 h-14 rounded-[100px] mt-2"
-                src="\images\Rectangle 43.png"
+                src="src\assets\Rectangle 43.png"
               />
               <div className=" flex-col justify-start items-start  inline-flex">
                 <div className="justify-start items-center inline-flex ">
@@ -145,7 +145,7 @@ export default function JobDesc() {
                 </div>
                 <img
                   className="w-6 h-6 relative"
-                  src="images\fi_arrow-right.svg"
+                  src="src\assets\fi_arrow-right.svg"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function JobDesc() {
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex">
                   <div className="w-8 h-8 justify-center items-center inline-flex">
                     <img
-                      src="images\CalendarBlank.svg"
+                      src="src\assets\CalendarBlank.svg"
                       className="w-8 h-8 relative"
                     />
                   </div>
@@ -189,7 +189,7 @@ export default function JobDesc() {
                 </div>
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex">
                   <div className="w-8 h-8 justify-center items-center inline-flex">
-                    <img src="images\Stack.svg" className="w-8 h-8 relative" />
+                    <img src="src\assets\Stack.svg" className="w-8 h-8 relative" />
                   </div>
                   <div className="self-stretch flex-col justify-start items-start gap-1 flex">
                     <div className="self-stretch text-gray-500 text-xs font-normal font-['Inter'] uppercase leading-[18px]">
@@ -202,7 +202,7 @@ export default function JobDesc() {
                 </div>
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex">
                   <div className="w-8 h-8 justify-center items-center inline-flex">
-                    <img src="images\Wallet.svg" className="w-8 h-8 relative" />
+                    <img src="src\assets\Wallet.svg" className="w-8 h-8 relative" />
                   </div>
                   <div className="self-stretch flex-col justify-start items-start gap-1 flex">
                     <div className="self-stretch text-gray-500 text-xs font-normal font-['Inter'] uppercase leading-[18px]">
