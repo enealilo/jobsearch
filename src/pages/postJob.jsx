@@ -66,8 +66,10 @@ export default function PostJob() {
               </div>
             </div>
             <div className="flex flex-col pb-5 pt-5">
-                <label className="font-medium text-gray-600 pt-5">Job Description</label>
-                <textarea className="mt-5" placeholder=""></textarea>
+              <label className="font-medium text-gray-600 pt-5">
+                Job Description
+              </label>
+              <textarea className="mt-5" placeholder=""></textarea>
             </div>
           </div>
         </div>

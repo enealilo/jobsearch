@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./Components/FooterDiv/Footer";
 import Navbar from "./Components/NavDiv/Navbar";
 import PostJob from "./pages/postJob"; 
+import JobDesc from "./pages/JobDesc";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Outlet/>
         <Footer></Footer>
         <PostJob></PostJob>
+        <JobDesc></JobDesc>
       </div>
   );
 }
