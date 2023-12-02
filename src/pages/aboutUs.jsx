@@ -1,7 +1,8 @@
+
 export default function AboutUs() {
   return (
     <>
-      <div className="w-[1439px] h-[536px] px-[15px] bg-white justify-start items-center inline-flex">
+      <div className="w-full h-[536px] px-[15px] bg-white justify-start items-center inline-flex">
         <div className="grow shrink basis-0 self-stretch relative">
           <div className="w-[300.43px] h-[536px] left-0 top-0 absolute rounded-bl-[250px] rounded-br-[250px] flex-col justify-end items-center gap-2.5 inline-flex">
             <img
@@ -9,11 +10,11 @@ export default function AboutUs() {
               src="/handshake.jpg"
             />
           </div>
-          <div className="w-[1109px] h-[391px] left-[300px] top-0 absolute bg-[#f1f4f8] rounded-br-[7px]">
-            <div className="left-[183px] top-[106px] absolute text-center text-fuchsia-800 text-[40px] font-bold font-['Koulen'] leading-[50px]">
+          <div className="w-full h-[391px] left-[300px] top-0 absolute bg-[#f1f4f8] rounded-br-[7px]">
+            <div className="left-[183px] top-[106px] absolute text-center text-fuchsia-800 text-[40px] font-bold font-['Inter'] leading-[50px]">
               WHO WE ARE?
             </div>
-            <div className="w-[743px] left-[182.79px] top-[173px] absolute text-fuchsia-800 text-lg font-normal font-['Lexend'] leading-7">
+            <div className="w-[743px] left-[182.79px] top-[173px] absolute text-fuchsia-800 text-lg font-normal font-['Inter'] leading-7">
               Welcome to ByteCareer, where we bridge the gap between talent and
               opportunity in the dynamic world of technology. Our platform is
               designed to empower both job seekers and employers, creating a
@@ -27,20 +28,20 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="w-[200px] h-[200px] p-2.5 left-[175px] top-[75px] absolute bg-[#2a68ff] rounded-[500px] border border-indigo-50 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-center text-white text-[32px] font-normal font-['Koulen'] leading-[50px]">
+            <div className="text-center text-white text-[32px] font-normal font-['Inter'] leading-[50px]">
               About Us
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[1436px] h-[566px] px-[15px] bg-white justify-start items-center inline-flex">
+      <div className="w-full h-[566px] px-[15px] bg-white justify-start items-center inline-flex">
         <div className="w-[894px] h-[393px] px-[30px] py-2.5 flex-col justify-center items-start gap-2.5 inline-flex">
           <div className="self-stretch border-b border-red-200 justify-start items-start gap-2.5 inline-flex">
-            <div className="grow shrink basis-0 text-fuchsia-800 text-[32px] font-normal font-['Koulen'] leading-[50px]">
+            <div className="grow shrink basis-0 text-fuchsia-800 text-[32px] font-normal font-['Inter'] leading-[50px]">
               OUR MISSION
             </div>
           </div>
-          <div className="self-stretch text-black text-lg font-light font-['Lexend Deca'] leading-7">
+          <div className="self-stretch text-black text-lg font-light font-['Inter'] leading-7">
             We are driven by a singular mission: to match exceptional talent
             with the right opportunities in the ever-evolving landscape of
             technology. We believe that the right job can transform lives and
@@ -71,7 +72,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="w-[1436px] pb-2.5 justify-center items-end inline-flex">
+      <div className="w-full pb-2.5 justify-center items-end inline-flex">
         <div className="w-[620px] self-stretch justify-start items-start gap-2.5 inline-flex">
           <div className="w-[284px] h-[604px] px-[34px] flex-col justify-center items-center gap-5 inline-flex">
             <div className="w-[250px] h-[291px] relative">
@@ -116,23 +117,21 @@ export default function AboutUs() {
         </div>
         <div className="w-[816px] self-stretch p-[15px] flex-col justify-start items-start gap-2.5 inline-flex">
           <div className="justify-start items-start gap-2.5 inline-flex">
-            <div className="text-black text-[32px] font-normal font-['Koulen'] leading-[50px]">
-              The Teams
+          <div className="self-stretch border-b border-red-200 gap-2.5 inline-flex">
+          <div className="grow shrink basis-0 text-fuchsia-800 text-[32px] font-normal font-['Inter'] leading-[50px]">
+              OUR TEAM
             </div>
           </div>
-          <div className="self-stretch  px-[15px] justify-start items-center gap-2.5 inline-flex">
+          </div>
+
+          <div className="self-stretch px-[15px] justify-start items-center gap-2.5 inline-flex">
             <div className="grow shrink basis-0 self-stretch">
-              <span className="text-black text-xxlg font-normal font-['Lexend'] leading-7">
-                1:{" "}
-              </span>
-              <span className="text-black text-[25px] font-bold font-['Lexend'] leading-7">
+              
+              <span className="text-blue-500 text-[24px] font-bold font-['Inter'] leading-7">
                 Rudina Himallari
               </span>
-              <span className="text-black text-lg font-normal font-['Lexend'] leading-7">
-                {" "}
-              </span>
-              <span className="text-black text-lg font-normal font-['Lexend'] leading-7">
-                Experienced web developer adept at translating creative concepts
+              <span className="text-black text-lg font-['Inter'] leading-7 font-light">
+              {" "}Experienced web developer adept at translating creative concepts
                 into robust, responsive websites. Proficient in front-end
                 technologies such as HTML, CSS, and JavaScript, I specialize in
                 crafting visually appealing and user-friendly interfaces. With a
@@ -144,16 +143,13 @@ export default function AboutUs() {
                 passion for innovation to every project, striving to create
                 impactful and modern web experiences <br />
                 <br />
-                2:{" "}
+                
               </span>
-              <span className="text-black text-[24px] font-bold font-['Lexend'] leading-7">
+              <span className="text-blue-500 text-[24px] font-bold font-['Inter'] leading-7">
                 Enea Lilo
               </span>
-              <span className="text-black text-lg font-bold font-['Lexend'] leading-7">
-                {" "}
-              </span>
-              <span className="text-black text-lg font-normal font-['Lexend'] leading-7">
-                As a web developer, I specialize in transforming ideas into
+              <span className="text-black text-lg font-['Inter'] leading-7 font-light">
+              {" "}  As a web developer, I specialize in transforming ideas into
                 robust, user-centric websites. With expertise in HTML, CSS, and
                 JavaScript, I create visually stunning and responsive designs
                 that elevate user experiences. My commitment to clean and
@@ -165,14 +161,23 @@ export default function AboutUs() {
                 solutions.
                 <br />
                 <br />
-                3:{" "}
               </span>
-              <span className="text-black text-[24px] font-bold font-['Lexend'] leading-7">
+              <span className="text-blue-500 text-[24px] font-bold font-['Inter'] leading-7">
                 Amine Keta
               </span>
-              <span className="text-black text-lg font-normal font-['Lexend'] leading-7">
-                {" "}
-                "Detail-oriented web developer with a passion for crafting pixel-perfect, user-friendly websites. Proficient in the latest front-end technologies, including HTML5, CSS3, and JavaScript, I specialize in creating visually compelling and interactive online experiences. With a focus on responsive design, accessibility, and cross-browser compatibility, I ensure that websites function seamlessly across various platforms. Known for my problem-solving skills and ability to adapt to evolving technologies, I am dedicated to delivering high-quality, scalable solutions. Whether working independently or collaboratively, I bring a creative mindset and a commitment to staying ahead in the ever-evolving field of web development."{" "}
+              <span className="text-black text-lg font-['Inter'] leading-7 font-light">
+              {" "}  Detail-oriented web developer with a passion for crafting
+                pixel-perfect, user-friendly websites. Proficient in the latest
+                front-end technologies, including HTML5, CSS3, and JavaScript, I
+                specialize in creating visually compelling and interactive
+                online experiences. With a focus on responsive design,
+                accessibility, and cross-browser compatibility, I ensure that
+                websites function seamlessly across various platforms. Known for
+                my problem-solving skills and ability to adapt to evolving
+                technologies, I am dedicated to delivering high-quality,
+                scalable solutions. Whether working independently or
+                collaboratively, I bring a creative mindset and a commitment to
+                staying ahead in the ever-evolving field of web development.
               </span>
             </div>
           </div>

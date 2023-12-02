@@ -13,10 +13,9 @@ export default function PostJob() {
   const [level, setLevel] = useState("senior");
   const [description, setDescription] = useState("");
   const [logo, setLogo] = useState(undefined);
-  const [email, setEmail] = useState ("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  
 
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -86,11 +85,10 @@ export default function PostJob() {
     fetch("http://localhost:8000/api/jobs", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result)
+        console.log(result);
         window.location.href = `/job/${result._id}`;
       })
       .catch((error) => console.log("error", error));
-
   };
 
   return (
@@ -104,18 +102,23 @@ export default function PostJob() {
         </p>
       </div>
       <div className="flex justify-center pb-20">
-        <div className="  bg-[#f1f4f8] rounded-[10px] shadow-lg p-10 mt-12 w-[654px] ">
-          <h3 className="font-medium text-gray-600">COMPANY DETAILS</h3>
-          <div className="flex flex-row  gap-x-16">
-            <div className="rounded w-[250px] h-[146px] mt-7 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 ">
+        <div className="bg-[#f1f4f8] rounded-[10px] shadow-lg p-10 mt-12 w-[654px] ">
+          <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-gray-100 text-[20px] font-['Inter']">
+            COMPANY DETAILS
+          </h3>
+          <div className="flex gap-x-16">
+            <div className=" flex flex-row justify-end items-end gap-x-2 rounded w-[260px] h-[146px] p-2  mt-7 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 ">
+              <FontAwesomeIcon
+                icon="fa-solid fa-upload"
+                className="fa-xl text-blue-600 opacity-60 hover:opacity-100"
+              />
               <input
                 type="file"
-                className="flex justify-center pt-28"
+                className="flex justify-center  "
                 onChange={(e) => {
                   uploadImage(e);
                 }}
               />
-              <FontAwesomeIcon icon="fa-solid fa-upload" />
             </div>
 
             <div className=" flex flex-col  w-1/2">
@@ -140,7 +143,7 @@ export default function PostJob() {
             </div>
           </div>
           <div>
-          <h3 className="font-medium text-gray-600 pb-5 pt-12">
+            <h3 className="font-medium text-gray-600 pb-5 pt-12">
               JOB DETAILS
             </h3>
             <div className="flex flex-row gap-4">
@@ -178,67 +181,62 @@ export default function PostJob() {
                 </select>
               </div>
             </div>
-            </div>
-            <div>
-          <h3 className="font-medium text-gray-600 pb-5 pt-12">
+          </div>
+          <div>
+            <h3 className="font-medium text-gray-600 pb-5 pt-12">
               CONTACT INFORMATION
             </h3>
             <div className="flex flex-row gap-4">
               <div className="singleSearch flex items-center gap-2">
                 <label className="text-[#808080] font-semibold">Cellular</label>
                 <input
-                 value={phone}
-                 onChange={(e) => setPhone(e.target.value)}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="(+355)"
                   className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
                 ></input>
-                  <label className="text-[#808080] font-semibold">Email</label>
+                <label className="text-[#808080] font-semibold">Email</label>
                 <input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
                 ></input>
-                  <label className="text-[#808080] font-semibold">Address</label>
+                <label className="text-[#808080] font-semibold">Address</label>
                 <input
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className=" focus:outline-none  rounded box-border h-8 w-28 p-4 border-2 "
                 ></input>
-            </div>
-            </div>
-          
-
-          
-            </div>
-            <div className="pb-5 pt-5">
-              <label
-                htmlFor="message"
-                className="font-medium text-gray-600 pt-5 block mb-2 text-sm font-medium"
-              >
-                JOB DESCRIPTION
-              </label>
-              <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                id="message"
-                rows="4"
-                className="block p-2.5 focus:outline-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Describe your job here..."
-              ></textarea>
-            </div>
-            
-
-            <div className="flex justify-end">
-              <button
-                onClick={submitJob}
-                className="bg-[#2a68ff] h-full p-3 px-6 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
-              >
-                Submit
-              </button>
+              </div>
             </div>
           </div>
+          <div className="pb-5 pt-5">
+            <label
+              htmlFor="message"
+              className="font-medium text-gray-600 pt-5 block mb-2 text-sm font-medium"
+            >
+              JOB DESCRIPTION
+            </label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              id="message"
+              rows="4"
+              className="block p-2.5 focus:outline-none w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Describe your job here..."
+            ></textarea>
+          </div>
+
+          <div className="flex justify-end">
+            <button
+              onClick={submitJob}
+              className="bg-[#2a68ff] h-full p-3 px-6 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
+            >
+              Submit
+            </button>
+          </div>
         </div>
-     
+      </div>
     </>
   );
 }

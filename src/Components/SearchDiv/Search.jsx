@@ -4,9 +4,8 @@ import { Form } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
 const Search = () => {
-  const {query} = useLoaderData();
+  const { query } = useLoaderData();
   const [search, setSearch] = useState(query);
-  
 
   const changeHandler = (e) => {
     setSearch(e.target.value);
@@ -36,21 +35,21 @@ const Search = () => {
           </div>
           <div className="flex gap-2 items-center"></div>
 
-          <button 
-          type="submit"
-            // onClick={async (event) => {
-            //   event.preventDefault();
-            //   console.log(search);
-            //   //Make request to search
-            //   const response = await fetch(
-            //     `http://localhost:8000/api/jobs?query=${search}`,
-            //     {
-            //       method: "GET",
-            //     }
-            //   );
-            //   const jobs = await response.json();
-            //   console.log(jobs);
-            // }}
+          <button
+            type="submit"
+            onClick={async (event) => {
+              event.preventDefault();
+              console.log(search);
+              //Make request to search
+              const response = await fetch(
+                `http://localhost:8000/api/jobs?query=${search}`,
+                {
+                  method: "GET",
+                }
+              );
+              const jobs = await response.json();
+              console.log(jobs);
+            }}
             className="bg-[#2a68ff] h-full p-4 px-10 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
           >
             Search

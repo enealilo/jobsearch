@@ -19,11 +19,14 @@ const routes = createBrowserRouter([
         loader: async ({ request }) => {
           const url = new URL(request.url);
           const q = url.searchParams.get("query");
-          const response = await fetch(`http://localhost:8000/api/jobs?${ q ? "query=" + q : "" }`, {
-            method: "GET",
-          });
+          const response = await fetch(
+            `http://localhost:8000/api/jobs?${q ? "query=" + q : ""}`,
+            {
+              method: "GET",
+            }
+          );
           const jobs = await response.json();
-          return {jobs, query: q ?? ""};
+          return { jobs, query: q ?? "" };
         },
       },
       {

@@ -88,7 +88,9 @@ export default function JobDesc() {
                       Job Posted:
                     </div>
                     <div className="self-stretch text-zinc-900 text-sm font-medium font-['Inter'] leading-tight">
-                      {DateTime.fromISO(job.createdAt).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}
+                      {DateTime.fromISO(job.createdAt).toLocaleString(
+                        DateTime.DATE_MED_WITH_WEEKDAY
+                      )}
                     </div>
                   </div>
                 </div>
@@ -120,7 +122,7 @@ export default function JobDesc() {
                       Salary:
                     </div>
                     <div className="self-stretch text-zinc-900 text-sm font-medium font-['Inter'] leading-tight">
-                    {job.salary.min}$ - {job.salary.max}$/monthly
+                      {job.salary.min}$ - {job.salary.max}$/monthly
                     </div>
                   </div>
                 </div>

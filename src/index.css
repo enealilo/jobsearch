@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base{
-  body{
-    background:white}
+@layer base {
+  body {
+    background: white;
+  }
 }
-li{
+li {
   list-style: none;
   cursor: pointer;
   position: relative;
 }
 
-li:hover::before{
+li:hover::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 5px;
   width: 100%;
   background: #2a68ff;
@@ -24,10 +24,17 @@ li:hover::before{
   color: #2a68ff;
 }
 
-.icon{
+.icon {
   cursor: pointer;
 }
 
-.card{
-  background: linear-gradient(to right, rgb(229, 231, 235), rgb(156, 163, 175), rgb(75, 85, 99));
+.card {
+  background: linear-gradient(
+    to right,
+    rgb(229, 231, 235),
+    rgb(156, 163, 175),
+    rgb(75, 85, 99)
+  );
 }
+
+
