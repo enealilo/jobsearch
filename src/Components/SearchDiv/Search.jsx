@@ -37,19 +37,19 @@ const Search = () => {
 
           <button
             type="submit"
-            onClick={async (event) => {
-              event.preventDefault();
-              console.log(search);
-              //Make request to search
-              const response = await fetch(
-                `http://localhost:8000/api/jobs?query=${search}`,
-                {
-                  method: "GET",
-                }
-              );
-              const jobs = await response.json();
-              console.log(jobs);
-            }}
+            // onClick={async (event) => {
+            //   event.preventDefault();
+            //   console.log(search);
+            //   //Make request to search
+            //   const response = await fetch(
+            //     `http://localhost:8000/api/jobs?query=${search}`,
+            //     {
+            //       method: "GET",
+            //     }
+            //   );
+            //   const jobs = await response.json();
+            //   console.log(jobs);
+            // }}
             className="bg-[#2a68ff] h-full p-4 px-10 rounded-[10px] text-white cursor-pointer hover:bg-blue-300"
           >
             Search

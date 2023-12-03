@@ -42,7 +42,7 @@ const Jobs = () => {
                   </span>
                 </div>
                 <button className="border-[2px] rounded-[10px] block p-[10px] w-full text-[14px] font-semibold text-[#252b36] hover:bg-white  group-hover:text-[#252b36]">
-                 <Link to="/JobDesc">Read more</Link> 
+                  <Link to={`/job/${_id}`}>Read more</Link>
                 </button>
               </div>
             );
